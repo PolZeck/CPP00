@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 17:07:10 by pledieu           #+#    #+#             */
-/*   Updated: 2025/06/09 14:47:57 by pledieu          ###   ########lyon.fr   */
+/*   Updated: 2025/06/11 11:42:05 by pledieu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@
 #include <sstream>
 
 int main() {
-    // Create a PhoneBook object to store and manage contacts
+	// Create a PhoneBook object to store and manage contacts
 	PhoneBook phonebook;
 	std::string command;
 
-    // Main read/eval loop: keep prompting the user for commands
+	// Main read/eval loop: keep prompting the user for commands
 	while (true) {
 		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command); // Read the full line of input
 
-        // Handle end-of-file (Ctrl+D) to exit gracefully
+		// Handle end-of-file (Ctrl+D) to exit gracefully
 		if (std::cin.eof()) {
 			std::cout << "\nExiting..." << std::endl;
 			break;
 		}
 
-        // ADD command: create and store a new contact
+		// ADD command: create and store a new contact
 		if (command == "ADD") {
 			phonebook.addContact();
 		}
-        // SEARCH command: show contact list and allow detailed lookup
+		// SEARCH command: show contact list and allow detailed lookup
 		else if (command == "SEARCH") {
 			phonebook.displayContacts(); // Show summary of all contacts
 			std::string input;
@@ -49,11 +49,11 @@ int main() {
 			else
 				std::cout << "Invalid input format." << std::endl;
 		}
-        // EXIT command: break the loop and end the program
+		// EXIT command: break the loop and end the program
 		else if (command == "EXIT") {
 			break;
 		}
-        // Any other input is not recognized
+		// Any other input is not recognized
 		else {
 			std::cout << "Unknown command." << std::endl;
 		}
@@ -61,4 +61,3 @@ int main() {
 
 	return 0;
 }
-
