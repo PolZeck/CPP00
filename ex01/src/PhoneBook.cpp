@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 17:07:14 by pledieu           #+#    #+#             */
-/*   Updated: 2025/06/12 14:02:12 by pledieu          ###   ########lyon.fr   */
+/*   Updated: 2025/06/16 15:51:48 by pledieu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void PhoneBook::addContact() {
 		contactCount++;
 	else
 		oldestIndex = (oldestIndex + 1) % 8;
-	this->addContact
 }
 
 // Display a table with all saved contacts
