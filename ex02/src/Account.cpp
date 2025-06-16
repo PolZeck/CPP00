@@ -6,7 +6,7 @@
 /*   By: pledieu <pledieu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 12:47:36 by pledieu           #+#    #+#             */
-/*   Updated: 2025/06/09 14:53:05 by pledieu          ###   ########lyon.fr   */
+/*   Updated: 2025/06/16 11:31:47 by pledieu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ Account::Account(int initial_deposit)
 	_nbAccounts++;
 	_totalAmount += initial_deposit;
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex
-	          << ";amount:" << _amount
-	          << ";created" << std::endl;
+	std::cout	<< "index:" << _accountIndex
+				<< ";amount:" << _amount
+				<< ";created" << std::endl;
 }
 
 // Destructor: log account closure
 Account::~Account(void) {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex
-	          << ";amount:" << _amount
-	          << ";closed" << std::endl;
+	std::cout	<< "index:" << _accountIndex
+				<< ";amount:" << _amount
+				<< ";closed" << std::endl;
 }
 
 // Static getters for global statistics
@@ -67,26 +67,26 @@ int Account::getNbWithdrawals(void) { return _totalNbWithdrawals; }
 // Display global account statistics
 void Account::displayAccountsInfos(void) {
 	_displayTimestamp();
-	std::cout << "accounts:" << _nbAccounts
-	          << ";total:" << _totalAmount
-	          << ";deposits:" << _totalNbDeposits
-	          << ";withdrawals:" << _totalNbWithdrawals
-	          << std::endl;
+	std::cout	<< "accounts:" << _nbAccounts
+				<< ";total:" << _totalAmount
+				<< ";deposits:" << _totalNbDeposits
+				<< ";withdrawals:" << _totalNbWithdrawals
+				<< std::endl;
 }
 
 // Register a deposit and update stats
 void Account::makeDeposit(int deposit) {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex
-	          << ";p_amount:" << _amount;
+	std::cout	<< "index:" << _accountIndex
+				<< ";p_amount:" << _amount;
 	_amount += deposit;
 	_totalAmount += deposit;
 	_nbDeposits++;
 	_totalNbDeposits++;
-	std::cout << ";deposit:" << deposit
-	          << ";amount:" << _amount
-	          << ";nb_deposits:" << _nbDeposits
-	          << std::endl;
+	std::cout	<< ";deposit:" << deposit
+				<< ";amount:" << _amount
+				<< ";nb_deposits:" << _nbDeposits
+				<< std::endl;
 }
 
 // Attempt a withdrawal; refuse if insufficient funds
